@@ -1,39 +1,34 @@
 package com.project.lunchuis.Model;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import java.time.LocalDate;
-import java.time.LocalTime;
-
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Entity
+@Table(name = "reports")
+@Getter
+@Setter
 public class Report {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
+
     private LocalDate date;
 
-    @OneToMany
+    @OneToMany(mappedBy = "report") // Relación con la entidad Buy
     private List<Buy> historyPurchases;
 
-    // Métodos para búsquedas
+    // Si necesitas métodos adicionales, como lógica de negocio
     public List<Buy> findByDate(LocalDate date) {
-        // Implementar lógica
-        return null;
-    }
-
-    public List<Buy> findById(int id) {
-        // Implementar lógica
-        return null;
-    }
-
-    public List<Buy> findByType(String type) {
-        // Implementar lógica basada en dinner o lunch
+        // Implementa tu lógica aquí
         return null;
     }
 }
-
