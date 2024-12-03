@@ -1,6 +1,11 @@
 package com.project.lunchuis.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.project.lunchuis.Model.Report;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ReportRepository extends JpaRepository<Report, Integer> {}
+import java.time.LocalDate;
+import java.util.List;
+
+public interface ReportRepository extends JpaRepository<Report, Long> {
+    List<Report> findByDate(LocalDate date);
+}

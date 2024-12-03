@@ -1,17 +1,24 @@
 package com.project.lunchuis.Service;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.project.lunchuis.Model.Report;
 import com.project.lunchuis.Repository.ReportRepository;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class ReportService {
-    @Autowired
-    private ReportRepository reportRepository;
+
+    private final ReportRepository reportRepository;
+
+    public ReportService(ReportRepository reportRepository) {
+        this.reportRepository = reportRepository;
+    }
+
+    public List<Report> getReportsByDate(LocalDate date) {
+        return reportRepository.findByDate(date);
+    }
 
     public List<Report> getAllReports() {
         return reportRepository.findAll();
@@ -21,4 +28,3 @@ public class ReportService {
         return reportRepository.save(report);
     }
 }
-
