@@ -1,6 +1,4 @@
 package com.project.lunchuis.Controller;
 
-public class UserController {
-
+public class QRController {
 }
-
