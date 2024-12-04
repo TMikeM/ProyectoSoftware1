@@ -2,12 +2,10 @@ package com.project.lunchuis.Repository;
 
 import java.util.Optional;
 
-import com.project.lunchuis.Model.UserModel;
+import com.project.lunchuis.Model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class UserRepository {
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    public Optional<UserModel> findById(Long userId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
-    }
+
 }

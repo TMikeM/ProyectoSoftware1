@@ -1,7 +1,7 @@
 package com.project.lunchuis.Service;
 
 import com.project.lunchuis.Model.Notification;
-import com.project.lunchuis.Model.UserModel;
+import com.project.lunchuis.Model.User;
 import com.project.lunchuis.Repository.NotificationRepository;
 import com.project.lunchuis.Repository.UserRepository;
 
@@ -33,7 +33,7 @@ public class NotificationService {
             throw new IllegalArgumentException("El ID del usuario no puede ser nulo");
         }
     
-        Optional<UserModel> user = userRepository.findById(userId);
+        Optional<User> user = userRepository.findById(userId);
         if (user.isPresent()) {
             notification.setUsuario(user.get());
             return notificationRepository.save(notification);

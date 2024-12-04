@@ -52,7 +52,7 @@ public class BuyService {
             buy.setDinner(buyDetails.isDinner());
             buy.setLunch(buyDetails.isLunch());
             buy.setMonthly(buyDetails.isMonthly());
-            buy.setQr(buyDetails.getQr());
+            buy.setQrId(buyDetails.getQrId());
             buy.setReport(buyDetails.getReport());
             buy.setUser(buyDetails.getUser());
             return buyRepository.save(buy);

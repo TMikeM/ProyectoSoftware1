@@ -20,11 +20,11 @@ public class Notification {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false) // Clave foránea
-    private UserModel usuario;
+    private User usuario;
 
     public Notification() {}
 
-    public Notification(LocalDate date, String message, UserModel usuario) {
+    public Notification(LocalDate date, String message, User usuario) {
         this.date = date;
         this.message = message;
         this.usuario = usuario;

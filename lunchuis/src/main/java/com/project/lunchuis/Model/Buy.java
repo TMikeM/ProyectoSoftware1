@@ -28,9 +28,9 @@ public class Buy {
     private boolean monthly;
 
     // Relación con QR
-    @ManyToOne
+    //@ManyToOne
     @JoinColumn(name = "qr_id", nullable = false) // Campo qr_id en la base de datos
-    private QRModel qr;
+    private Long qrId;
 
     // Relación con Report
     @ManyToOne
@@ -40,5 +40,5 @@ public class Buy {
     // Relación con User
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false) // Campo user_id en la base de datos
-    private UserModel user;
+    private User user;
 }

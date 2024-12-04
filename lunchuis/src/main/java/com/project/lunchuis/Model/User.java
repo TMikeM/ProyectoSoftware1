@@ -18,8 +18,8 @@ public class User {
     private String email;
     private String dni;
     private String phoneNumber;
-    private Rol rol;
+    private String rol;
     private Boolean session;
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Buy> purchases;
 }
