@@ -4,7 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658694f2-e282-4263-86a8-06a14fc958ee" name="Changes" comment="" />
+    <list default="true" id="658694f2-e282-4263-86a8-06a14fc958ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pagina/Lobby/ModuloUsuario.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pagina/Lobby/ModuloUsuario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pagina/Lobby/backBienvenida2.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pagina/Lobby/backBienvenida2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pagina/Lobby/lobby.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pagina/Lobby/lobby.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pagina/Lobby/styleBienvenida.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pagina/Lobby/styleBienvenida.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pagina/Login/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pagina/Login/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pagina/Login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pagina/Login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/pagina/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Front/pagina/Login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/BuyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/BuyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/QRController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/QRController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/LunchUISApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/LunchUISApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/Buy.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/Buy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/QRModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/QRModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/BuyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/BuyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/NotificationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/NotificationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/QRRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/QRRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/ReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/ReportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/BuyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/BuyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/QRService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/QRService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/ReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/Service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/java/com/project/lunchuis/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lunchuis/src/test/java/com/project/lunchuis/LunchuisApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/lunchuis/src/test/java/com/project/lunchuis/LunchuisApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,24 +68,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Cristian/Documents/GitHub/ProyectoSoftware1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Cristian/Documents/GitHub",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="LunchuisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="lunchuis" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.lunchuis.LunchuisApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -69,6 +113,9 @@
       <option name="presentableId" value="Default" />
       <updated>1733196684147</updated>
       <workItem from="1733196685177" duration="3078000" />
+      <workItem from="1733281010222" duration="322000" />
+      <workItem from="1733281351252" duration="61000" />
+      <workItem from="1733281431982" duration="25000" />
     </task>
     <servers />
   </component>
