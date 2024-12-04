@@ -1,6 +1,5 @@
 package com.project.lunchuis.Service;
 
-
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
@@ -19,9 +18,6 @@ public class QrService {
     @Autowired
     private QrRepository qrRepository;
 
-    @Autowired
-    private BuyService buyService;
-
     public byte[] generateQrImage(String content) {
         try {
             QRCodeWriter qrCodeWriter = new QRCodeWriter();
@@ -36,9 +32,9 @@ public class QrService {
 
     public QrCode generateQrCode(Buy buy) {
         QrCode qrCode = new QrCode();
-        qrCode.setBuy(buy);
-        String content = "Generated QR for Buy ID: " + buy.getId();
-        qrCode.setQrImage(generateQrImage(content));
-        return qrRepository.save(qrCode);
+        qrCode.setBuy(buy); // Asociamos el QR a la compra
+        String content = "Compra ID: " + buy.getId(); // Aquí puedes agregar más información relevante
+        qrCode.setQrImage(generateQrImage(content)); // Generamos el código QR con el contenido
+        return qrRepository.save(qrCode); // Guardamos el QR en la base de datos
     }
 }

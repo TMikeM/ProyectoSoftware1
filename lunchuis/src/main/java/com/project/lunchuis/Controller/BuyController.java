@@ -16,36 +16,31 @@ public class BuyController {
     @Autowired
     private BuyService buyService;
 
-    // Crear una nueva compra
     @PostMapping
     public ResponseEntity<Buy> createBuy(@RequestBody Buy buy) {
-        // El servicio se encarga de crear el Report automáticamente
+        // El servicio crea el reporte y el QR automáticamente
         Buy newBuy = buyService.createBuy(buy);
         return ResponseEntity.ok(newBuy);
     }
 
-    // Obtener todas las compras
     @GetMapping
     public ResponseEntity<List<Buy>> getAllBuys() {
         List<Buy> buys = buyService.getAllBuys();
         return ResponseEntity.ok(buys);
     }
 
-    // Obtener una compra por ID
     @GetMapping("/{id}")
     public ResponseEntity<Buy> getBuyById(@PathVariable Long id) {
         Optional<Buy> buy = buyService.getBuyById(id);
         return buy.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // Actualizar una compra existente
     @PutMapping("/{id}")
     public ResponseEntity<Buy> updateBuy(@PathVariable Long id, @RequestBody Buy buyDetails) {
         Optional<Buy> updatedBuy = buyService.updateBuy(id, buyDetails);
         return updatedBuy.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // Eliminar una compra
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBuy(@PathVariable Long id) {
         boolean deleted = buyService.deleteBuy(id);
