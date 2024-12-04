@@ -66,7 +66,7 @@ public class BuyService {
         });
     }
 
-    public boolean deleteBuy(Integer id) {
+    public boolean deleteBuy(Long id) {
         if (buyRepository.existsById(id)) {
             buyRepository.deleteById(id);
             return true;
