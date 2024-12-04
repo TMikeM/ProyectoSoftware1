@@ -8,6 +8,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
+@Table(name = "notification")
 public class Notification {
 
     @Id

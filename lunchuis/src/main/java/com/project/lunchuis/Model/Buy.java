@@ -11,6 +11,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @Entity
+@Table(name = "buy")
 public class Buy {
 
     @Id

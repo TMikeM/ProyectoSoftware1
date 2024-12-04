@@ -34,6 +34,7 @@ public class UserService {
             userRepository.save(u);
         });
     }
+
     public Optional<User> authenticate(String email, String password) {
         return userRepository.findByEmailAndPassword(email, password);
     }
