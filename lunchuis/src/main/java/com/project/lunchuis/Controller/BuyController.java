@@ -1,7 +1,6 @@
 package com.project.lunchuis.Controller;
 
 import com.project.lunchuis.Model.Buy;
-import com.project.lunchuis.Model.QrCode;
 import com.project.lunchuis.Service.BuyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +19,7 @@ public class BuyController {
     // Crear una nueva compra
     @PostMapping
     public ResponseEntity<Buy> createBuy(@RequestBody Buy buy) {
+        // El servicio se encarga de crear el Report automáticamente
         Buy newBuy = buyService.createBuy(buy);
         return ResponseEntity.ok(newBuy);
     }
@@ -54,13 +54,5 @@ public class BuyController {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
-    @PutMapping("/{buyId}/qrcode")
-    public ResponseEntity<Buy> assignQrCode(@PathVariable Long buyId, @RequestBody QrCode qrCode) {
-        Optional<Buy> updatedBuy = buyService.getBuyById(buyId).map(buy -> {
-            buy.setQrcode(qrCode);
-            return buyService.createBuy(buy);
-        });
-        return updatedBuy.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
