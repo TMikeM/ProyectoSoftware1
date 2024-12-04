@@ -1,7 +1,10 @@
 package com.project.lunchuis.Model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Entity
+@Data
 public class QrCode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
