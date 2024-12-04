@@ -15,7 +15,7 @@ public class Buy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @PositiveOrZero(message = "El valor debe ser positivo")
     private int value;
@@ -28,10 +28,14 @@ public class Buy {
     private boolean monthly;
 
     // Relación con QR
-    //@ManyToOne
-    @JoinColumn(name = "qr_id", nullable = false) // Campo qr_id en la base de datos
-    private Long qrId;
-
+    @OneToOne(mappedBy = "buy", cascade = CascadeType.ALL, orphanRemoval = true)// Campo qr_id en la base de datos
+    private QrCode qrcode;
+    public void setQrcode(QrCode qrcode) {
+        this.qrcode = qrcode;
+        if (qrcode != null) {
+            qrcode.setBuy(this);
+        }
+    }
     // Relación con Report
     @ManyToOne
     @JoinColumn(name = "report_id", nullable = false) // Campo report_id en la base de datos

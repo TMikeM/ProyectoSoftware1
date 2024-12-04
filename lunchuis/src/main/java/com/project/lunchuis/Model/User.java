@@ -3,6 +3,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,8 +20,10 @@ public class User {
     private String email;
     private String dni;
     private String phoneNumber;
-    private String rol;
+
+    @Enumerated(EnumType.STRING)
+    private Rol rol;
     private Boolean session;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Buy> purchases;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Buy> purchases = new ArrayList<>();
 }

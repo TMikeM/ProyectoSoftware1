@@ -40,11 +40,11 @@ public class BuyService {
         return buyRepository.findAll();
     }
 
-    public Optional<Buy> getBuyById(Integer id) {
+    public Optional<Buy> getBuyById(Long id) {
         return buyRepository.findById(id);
     }
 
-    public Optional<Buy> updateBuy(Integer id, Buy buyDetails) {
+    public Optional<Buy> updateBuy(Long id, Buy buyDetails) {
         return buyRepository.findById(id).map(buy -> {
             buy.setValue(buyDetails.getValue());
             buy.setDate(buyDetails.getDate());
@@ -52,9 +52,16 @@ public class BuyService {
             buy.setDinner(buyDetails.isDinner());
             buy.setLunch(buyDetails.isLunch());
             buy.setMonthly(buyDetails.isMonthly());
-            buy.setQrId(buyDetails.getQrId());
-            buy.setReport(buyDetails.getReport());
-            buy.setUser(buyDetails.getUser());
+
+            if (buyDetails.getQrcode() != null) {
+                buy.setQrcode(buyDetails.getQrcode());
+            }
+            if (buyDetails.getReport() != null) {
+                buy.setReport(buyDetails.getReport());
+            }
+            if (buyDetails.getUser() != null) {
+                buy.setUser(buyDetails.getUser());
+            }
             return buyRepository.save(buy);
         });
     }

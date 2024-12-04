@@ -1,6 +1,7 @@
 package com.project.lunchuis.Controller;
 
 import com.project.lunchuis.Model.Buy;
+import com.project.lunchuis.Model.QrCode;
 import com.project.lunchuis.Service.BuyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,21 +33,21 @@ public class BuyController {
 
     // Obtener una compra por ID
     @GetMapping("/{id}")
-    public ResponseEntity<Buy> getBuyById(@PathVariable Integer id) {
+    public ResponseEntity<Buy> getBuyById(@PathVariable Long id) {
         Optional<Buy> buy = buyService.getBuyById(id);
         return buy.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // Actualizar una compra existente
     @PutMapping("/{id}")
-    public ResponseEntity<Buy> updateBuy(@PathVariable Integer id, @RequestBody Buy buyDetails) {
+    public ResponseEntity<Buy> updateBuy(@PathVariable Long id, @RequestBody Buy buyDetails) {
         Optional<Buy> updatedBuy = buyService.updateBuy(id, buyDetails);
         return updatedBuy.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // Eliminar una compra
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBuy(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteBuy(@PathVariable Long id) {
         boolean deleted = buyService.deleteBuy(id);
         if (deleted) {
             return ResponseEntity.noContent().build();
@@ -54,5 +55,12 @@ public class BuyController {
             return ResponseEntity.notFound().build();
         }
     }
-    
+    @PutMapping("/{buyId}/qrcode")
+    public ResponseEntity<Buy> assignQrCode(@PathVariable Long buyId, @RequestBody QrCode qrCode) {
+        Optional<Buy> updatedBuy = buyService.getBuyById(buyId).map(buy -> {
+            buy.setQrcode(qrCode);
+            return buyService.createBuy(buy);
+        });
+        return updatedBuy.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
