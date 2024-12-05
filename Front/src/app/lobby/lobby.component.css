@@ -16,6 +16,8 @@ nav.navbar {
                 -1px -1px 0 #d9d9d9,
                 1px -1px 0 #d9d9d9,
                 -1px 1px 0 #d9d9d9;
+    font-family: 'Shrikhand';
+    font-weight: 150;
 }
 
 /* Contenedores y elementos informativos */
@@ -25,7 +27,6 @@ nav.navbar {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    z-index: 101;
 }
 
 .text-titulo,
@@ -33,7 +34,7 @@ nav.navbar {
     color: #ffff;
 }
 
-.info-container h3, 
+.info-container h3,
 .info-container h5 {
     margin: 0 0 10px;
     text-align: left;
@@ -83,10 +84,13 @@ nav.navbar {
     background-image: url('Images/foto perfil.png');
 }
 
-#profilePhoto{
-    background-image: url('Images/foto perfil.png');
-    width: 200px; /* Ajusta el tamaño según sea necesario */
-    height: 200px;
+#profilePhoto {
+  background-image: url('Images/foto perfil.png');
+  width: auto; /* El ancho ocupa todo el contenedor disponible */
+  height: 200px; /* Altura fija para la imagen */
+  background-repeat: no-repeat; /* No repite la imagen */
+  background-position: center; /* Centra la imagen */
+  background-size: contain; /* Ajusta la imagen para que cubra todo el área */
 }
 
 
