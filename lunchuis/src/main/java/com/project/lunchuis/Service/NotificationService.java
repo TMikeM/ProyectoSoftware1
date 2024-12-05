@@ -78,9 +78,9 @@ public class NotificationService {
             if (notification.getUsuario() == null || notification.getUsuario().getEmail() == null) {
                 throw new IllegalArgumentException("El usuario o su correo no está definido");
             }
-    
-            // Crear el mensaje de correo
+
             SimpleMailMessage mailMessage = new SimpleMailMessage();
+            mailMessage.setFrom("minewacoundgg@gmail.com");  // Asegúrate de usar la misma cuenta configurada
             mailMessage.setTo(notification.getUsuario().getEmail());
             mailMessage.setSubject("Nueva Notificación");
             mailMessage.setText(notification.getMessage());

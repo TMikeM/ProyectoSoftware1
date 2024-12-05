@@ -1,4 +1,5 @@
 package com.project.lunchuis.Model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,5 +28,6 @@ public class User {
     private Rol rol;
     private Boolean session;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Buy> purchases = new ArrayList<>();
 }

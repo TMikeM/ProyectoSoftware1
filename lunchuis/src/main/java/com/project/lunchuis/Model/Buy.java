@@ -1,5 +1,6 @@
 package com.project.lunchuis.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.Getter;
@@ -30,6 +31,7 @@ public class Buy {
 
     // Relación con QR
     @OneToOne(mappedBy = "buy", cascade = CascadeType.ALL, orphanRemoval = true)// Campo qr_id en la base de datos
+    @JsonIgnore
     private QrCode qrcode;
     public void setQrcode(QrCode qrcode) {
         this.qrcode = qrcode;
