@@ -1,0 +1,119 @@
+<nav class="navbar navbar-light bg-grey">
+    <div class="d-flex align-items-center" style="position: relative; width: 100%;">
+        <button class="btn_lunch me-3" type="button" id="toggleButton">
+            <!-- <img src="Logos/Lunch-removebg-preview.png" alt="Logo" style="width: 50px; height: auto;"> -->
+        </button>
+
+        <div class="info-container" id="infoContainer"
+            style="display: none; position: absolute; top: 100%; left: 0; z-index: 1000;">
+            <h3 class="text-titulo">Información de Combos</h3>
+            <h5 class="text-subtitulo">Valor del combo</h5>
+            <h6 class="textInfo">$xxxx</h6>
+            <h3 class="text-subtitulo">Horario del servicio</h3>
+            <h5 class="text-subtitulo">Para Comprar</h5>
+            <h6 class="textInfo">Inicio: xxxx</h6>
+            <h6 class="textInfo">Fin: xxxx</h6>
+            <h5 class="text-subtitulo">Para Recibir</h5>
+            <h6 class="textInfo">Inicio: xxxx</h6>
+            <h6 class="textInfo">Fin: xxxx</h6>
+        </div>
+
+        <span class="navbar-text" id="lunchUIS">Lunch UIS</span>
+
+        <div class="ms-auto d-flex align-items-center">
+            <button class="btn_lunch me-2" type="button" id="notificationButton">
+                <!-- <img src="Images/campana-removebg-preview.png" alt="Notificaciones" style="width: 27px; height: auto;"> -->
+            </button>
+            <div class="info-container" id="notificationContainer"
+                style="display: none; position: absolute; top: 100%; right: 0; z-index: 1000;">
+                <h3 class="text-titulo">Notificaciones</h3>
+                <p class="textInfo">Aquí van tus notificaciones.</p>
+            </div>
+
+            <button class="btn_lunch" type="button" id="profileButton">
+                <!-- <img src="Images/foto perfil.png" alt="Perfil" style="width: 40px; height: auto;"> -->
+            </button>
+            <div class="info-container" id="profileContainer"
+                style="display: none; position: absolute; top: 100%; right: 0; z-index: 1000;">
+                <div style="text-align: center; margin: 10px 0;">
+                    <!-- <img src="Images/foto perfil.png" alt="Perfil" style="width: 150px; height: auto;"> -->
+                </div>
+                <p class="textInfo2">Nombre del Usuario</p>
+                <p class="textInfo2">Rol del usuario</p>
+                <p class="textInfo2">Codigo del usuario</p>
+
+                <div class="button-container">
+                    <button class="btn_perfil" id="btnMisCompras">Mis Compras</button>
+                    <button class="btn_perfil" id="btnCerrarSesion">Cerrar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="centered-rectangle">
+    <div class="reloj">
+        <div class="manecilla hora" id="hora"></div>
+        <div class="manecilla minuto" id="minuto"></div>
+        <div class="manecilla segundo" id="segundo"></div>
+        <div class="centro"></div>
+    </div>
+    <div class="hora-digital" id="horaDigital">00:00:00</div>
+    <p class="text-titulo">Combos disponibles</p>
+    <p class="textInfo">#xxxxx</p>
+    <button class="btn_comprar_combo" id="btnComprarCombo">Comprar Combo</button>
+</div>
+
+<!-- Modal Overlay -->
+<div id="modalOverlay" style="display: none;">
+    <div id="modalContent">
+        <h3 id="modalTitle">COMPRAS REALIZADAS</h3>
+        <p id="modalMessage">Aquí se mostrarán las compras realizadas.</p>
+        <button id="closeModalButton">Cerrar</button>
+    </div>
+</div>
+
+<!-- Modal Overlay para confirmar compra -->
+<div id="modalOverlayCompra" class="modal-overlay"> 
+    <div id="modalContentCompra" class="modal-content">
+        <h3 id="modalTitleCompra">MODULO DE COMPRA</h3>
+        <div class="modalSelecciones">
+            <div class="seleccion">
+                <p>Selecciona <br> Servicio</p>
+                <label for="opcionA"> 
+                    <span>Almuerzo</span>
+                    <input class="checkbox" type="checkbox" id="opcion1" value="opcion1"> 
+                </label>
+                <label for="opcionC"> 
+                    <span>Cena</span>
+                    <input class="checkbox" type="checkbox" id="opcion1" value="opcion1"> 
+                </label>
+            </div>
+            <div class="seleccion">
+                <p>Selecciona <br> Cupo</p>
+                <label for="opcionA"> 
+                    <span>Unico</span>
+                    <input class="checkbox" type="checkbox" id="opcion1" value="opcion1"> 
+                </label>
+                <label for="opcionC"> 
+                    <span>Mensual</span>
+                    <input class="checkbox" type="checkbox" id="opcion1" value="opcion1"> 
+                </label>
+            </div>
+        </div>
+        <div class="modalMetodoPago">
+            <span>Selecciona Metodo de Pago</span>
+            <select id="metodoPago" class="selectMethod">
+                <option value="ninguno">Ninguno</option>
+                <option value="tarjeta">Tarjeta de Crédito</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="paypal">PayPal</option>
+                <option value="transferencia">Transferencia Bancaria</option>
+            </select>
+        </div>
+        <div class="modal-buttons">
+            <button id="confirmarCompraButton" class="modal-confirm-btn">Confirmar</button>
+            <button id="cancelarCompraButton" class="modal-close-btn">Cancelar</button>
+        </div>
+    </div>
+</div>
