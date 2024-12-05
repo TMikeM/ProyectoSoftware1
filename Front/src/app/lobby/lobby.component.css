@@ -5,7 +5,7 @@ nav.navbar {
     z-index: 100;
     background-color: #313131;
     padding: 0.1rem;
-    font-family: 'Georgia', sans-serif;
+
 }
 
 .navbar-text {
@@ -16,8 +16,6 @@ nav.navbar {
                 -1px -1px 0 #d9d9d9,
                 1px -1px 0 #d9d9d9,
                 -1px 1px 0 #d9d9d9;
-    font-family: 'Shrikhand';
-    font-weight: 150;
 }
 
 /* Contenedores y elementos informativos */
