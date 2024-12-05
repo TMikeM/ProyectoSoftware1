@@ -63,11 +63,12 @@ public class BuyService {
         notification.setMessage("Gracias por tu compra. ID: " + savedBuy.getId());
         notificationService.createNotification(notification, savedBuy.getUser().getId());
     
+        // Enviar la notificación por correo electrónico
+        notificationService.sendNotification(notification);  // Ahora enviamos el correo
+    
         return savedBuy;
     }
     
-    
-
     public List<Buy> getAllBuys() {
         return buyRepository.findAll();
     }

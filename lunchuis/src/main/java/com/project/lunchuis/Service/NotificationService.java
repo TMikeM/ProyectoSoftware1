@@ -74,21 +74,26 @@ public class NotificationService {
     // Lógica para enviar notificación
     public void sendNotification(Notification notification) {
         try {
+            // Verificar que el usuario y su correo no sean nulos
             if (notification.getUsuario() == null || notification.getUsuario().getEmail() == null) {
                 throw new IllegalArgumentException("El usuario o su correo no está definido");
             }
     
+            // Crear el mensaje de correo
             SimpleMailMessage mailMessage = new SimpleMailMessage();
             mailMessage.setTo(notification.getUsuario().getEmail());
             mailMessage.setSubject("Nueva Notificación");
             mailMessage.setText(notification.getMessage());
     
+            // Enviar el correo
             mailSender.send(mailMessage);
             System.out.println("Correo enviado a " + notification.getUsuario().getEmail());
         } catch (Exception e) {
+            // Capturar cualquier error en el proceso de envío
             System.err.println("Error al enviar correo: " + e.getMessage());
         }
     }
+    
     
 
 }
