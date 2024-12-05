@@ -21,9 +21,8 @@ public class User {
     private String name;
     private String password;
     private String email;
-    private String dni;
+    private String code;
     private String phoneNumber;
-    private String codigo;
     @Enumerated(EnumType.STRING)
     private Rol rol;
     private Boolean session;

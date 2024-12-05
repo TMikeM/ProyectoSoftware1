@@ -28,8 +28,8 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<User> login(@RequestParam String codigo, @RequestParam String password) {
-        Optional<User> user = userService.authenticate(codigo, password);
+    public ResponseEntity<User> login(@RequestParam String code, @RequestParam String password) {
+        Optional<User> user = userService.authenticate(code, password);
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(401).build());
     }
 
