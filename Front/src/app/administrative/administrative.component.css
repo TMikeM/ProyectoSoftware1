@@ -1,0 +1,172 @@
+/* Estilos de navegación */
+nav.navbar {
+    position: relative;
+    z-index: 100;
+    background-color: #313131;
+    padding: 0.1rem;
+    font-family: 'Georgia', sans-serif;
+}
+
+.navbar-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 1px 1px 0 #d9d9d9,
+        -1px -1px 0 #d9d9d9,
+        1px -1px 0 #d9d9d9,
+        -1px 1px 0 #d9d9d9;
+    font-family: 'Shrikhand';
+    font-weight: 150;
+}
+
+/* Contenedores y elementos informativos */
+.info-container {
+    background-color: #313131;
+    padding: 25px;
+    /* Aumentado */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.text-titulo,
+.text-subtitulo {
+    color: #ffff;
+}
+
+.info-container h3,
+.info-container h5 {
+    margin: 0 0 10px;
+    text-align: left;
+}
+
+.info-container h6 {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+/* Estilos de texto */
+.text-black {
+    color: #ffff;
+}
+
+.textInfo {
+    color: green;
+}
+
+.textInfo2 {
+    margin-top: 2%;
+    color: #ffff;
+    font-size: 18px;
+    /* Aumentado */
+}
+
+/* Estilos de botones */
+.btn_lunch {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 45px;
+    /* Ajusta el tamaño según sea necesario */
+    height: 45px;
+    /* Ajusta el tamaño según sea necesario */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#toggleButton {
+    background-image: url('Logos/Lunch-removebg-preview.png');
+}
+
+#notificationButton {
+    background-image: url('Images/campana-removebg-preview.png');
+}
+
+#profileButton {
+    background-image: url('Images/foto perfil.png');
+}
+
+.centered-rectangle {
+    text-align: center;
+    position: absolute;
+    margin-top: 2%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 90%;
+    /* Cambia el ancho a un porcentaje */
+    max-width: 800px;
+    /* Limita el ancho máximo */
+    height: 80%;
+    /* Deja que la altura se ajuste automáticamente */
+    min-height: 200px;
+    /* Establece una altura mínima */
+    background-color: rgba(49, 49, 49, 0.9);
+    /* Mantén el color de fondo */
+    border-radius: 40px;
+    /* Bordes redondeados */
+    z-index: 50;
+    /* Asegura que esté en el nivel adecuado */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Añade una sombra para mejorar la estética */
+    font-family: 'Shrikhand';
+    font-weight: 150;
+}
+
+.btn-login {
+    font-size: 18px;
+    position: relative;
+    background-color: #313131;
+    border: 2px solid #6fbd4e;
+    color: #6fbd4e;
+    padding: 12px 25px;
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.btn-login:hover {
+    background-color: #6fbd4e;
+    color: #d9d9d9;
+}
+
+.form-control {
+    background-color: #3b3b3b;
+    border-color: #3b3b3b;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 10%;
+}
+
+.form-control::placeholder {
+    color: #6fbd4e;
+    font-size: 18px;
+    text-align: center;
+}
+
+.checkbox {
+    margin-left: 0;
+    /* Elimina cualquier margen extra a la izquierda */
+}
+
+.seleccion {
+    display: flex;
+    flex-direction: column;
+    /* Cambiado a columna para apilar los checkboxes */
+    align-items: flex-end;
+    /* Alinea los elementos a la derecha */
+    gap: 10px;
+    /* Añade un espacio entre los checkboxes */
+}
+label {
+    display: flex;
+    align-items: center;
+    gap: 30px;               /* Añade espacio entre el texto y el checkbox */
+    justify-content: flex-end; /* Alinea el contenido del label a la derecha */
+  }
+  .colBoton{
+    align-content: center;
+  }

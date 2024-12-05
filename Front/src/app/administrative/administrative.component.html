@@ -1,39 +1,98 @@
 <nav class="navbar navbar-light bg-grey">
     <div class="d-flex align-items-center" style="position: relative; width: 100%;">
-        <button class="btn_lunch me-3" type="button" id="toggleButton">
+        <button class="btn_lunch me-3" type="button" id="toggleButton" disabled>
             <!-- <img src="Logos/Lunch-removebg-preview.png" alt="Logo" style="width: 50px; height: auto;"> -->
         </button>
-
 
         <span class="navbar-text" id="lunchUIS">Lunch UIS</span>
 
         <div class="ms-auto d-flex align-items-center">
-            <button class="btn_lunch me-2" type="button" id="notificationButton">
+            <button class="btn_lunch me-2" type="button" id="notificationButton" disabled>
                 <!-- <img src="Images/campana-removebg-preview.png" alt="Notificaciones" style="width: 27px; height: auto;"> -->
             </button>
-            <div class="info-container" id="notificationContainer"
-                style="display: none; position: absolute; top: 100%; right: 0; z-index: 1000;">
-                <h3 class="text-titulo">Notificaciones</h3>
-                <p class="textInfo">Aquí van tus notificaciones.</p>
-            </div>
 
-            <button class="btn_lunch" type="button" id="profileButton">
+            <button class="btn_lunch" type="button" id="profileButton" disabled>
                 <!-- <img src="Images/foto perfil.png" alt="Perfil" style="width: 40px; height: auto;"> -->
             </button>
-            <div class="info-container" id="profileContainer"
-                style="display: none; position: absolute; top: 100%; right: 0; z-index: 1000;">
-                <div style="text-align: center; margin: 10px 0;" id="profilePhoto">
-                    <!-- <img src="Images/foto perfil.png" alt="Perfil" style="width: 150px; height: auto;"> -->
-                </div>
-                <p class="textInfo2">Nombre del Usuario</p>
-                <p class="textInfo2">Rol del usuario</p>
-                <p class="textInfo2">Codigo del usuario</p>
-
-                <div class="button-container">
-                    <button class="btn_perfil" id="btnMisCompras">Mis Compras</button>
-                    <button class="btn_perfil" id="btnCerrarSesion">Cerrar Sesión</button>
-                </div>
-            </div>
         </div>
     </div>
 </nav>
+<div class="container-fluid centered-rectangle">
+    <div class="row" style="margin-top: 3%;">
+        <h1 class="textInfo2" style="font-size: 30px;">Modulo Administrador</h1>
+    </div>
+    <div class="row" style="margin-top: 5%;">
+        <div class="col-4">
+            <h2 class="textInfo2">Cupos Disponibles</h2>
+        </div>
+        <div class="col-4">
+            <h2 class="textInfo2">Almuerzo</h2>
+        </div>
+        <div class="col-4">
+            <h2 class="textInfo2">Cena</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h2 class="textInfo2">Semanal</h2>
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control" id="username" placeholder="######">
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control" id="username" placeholder="######">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h2 class="textInfo2">Mensual</h2>
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control" id="username" placeholder="######">
+        </div>
+        <div class="col-4 colBoton">
+            <div>
+                <button class="btn-login" id="btnIniciarSesion">Modificar</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 5%;">
+        <h1 class="textInfo2" style="font-size: 30px;">Reporte de Ventas</h1>
+    </div>
+    <div class="row" style="margin-top: 5%;">
+        <div class="col-3">
+            <h2 class="textInfo2">Fecha Inicio</h2>
+        </div>
+        <div class="col-3">
+            <input type="text" class="form-control" id="username" placeholder="DD-MM-AAAA">
+        </div>
+        <div class="col-3">
+            <h2 class="textInfo2">Fecha Fin</h2>
+        </div>
+        <div class="col-3">
+            <input type="text" class="form-control" id="username" placeholder="DD-MM-AAAA">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h2 class="textInfo2">Seleccione Servicio</h2>
+        </div>
+        <div class="col-4">
+            <div class="row seleccion">
+                <label for="opcion1">
+                    <span class="textInfo2">Almuerzo</span>
+                    <input class="checkbox" type="checkbox" id="opcion1" value="opcion1">
+                </label>
+            </div>
+            <div class="row seleccion">
+                <label for="opcion2">
+                    <span class="textInfo2">Cena</span>
+                    <input class="checkbox" type="checkbox" id="opcion2" value="opcion2">
+                </label>
+            </div>
+        </div>
+        <div class="col-4 colBoton" >
+            <button class="btn-login" id="btnIniciarSesion">Generar</button>
+        </div>
+    </div>
+</div>
