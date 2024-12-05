@@ -6,12 +6,11 @@ import com.project.lunchuis.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.stereotype.Controller;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/api/users")
+@Controller
 public class UserController {
 
     @Autowired
@@ -27,12 +26,11 @@ public class UserController {
         return userService.saveUser(user);
     }
 
-    @PostMapping("/login/code/password")
-    public ResponseEntity<User> login(@RequestParam String code, @RequestParam String password) {
-        Optional<User> user = userService.authenticate(code, password);
-        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(401).build());
-    }
 
+    @GetMapping("/login/{code}/{contrasena}")
+    public ResponseEntity<Optional<User>> login(@PathVariable String code, @PathVariable String contrasena) {
+        return ResponseEntity.ok(userService.authenticate(code, contrasena));
+    }
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         return userService.getUserById(id)

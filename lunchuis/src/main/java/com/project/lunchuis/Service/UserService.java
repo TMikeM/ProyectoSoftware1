@@ -36,6 +36,6 @@ public class UserService {
     }
 
     public Optional<User> authenticate(String code, String password) {
-        return userRepository.findByEmailAndPassword(code, password);
+        return userRepository.findByCodeAndPassword(code, password);
     }
 }
