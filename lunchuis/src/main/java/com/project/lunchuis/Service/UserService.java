@@ -35,7 +35,7 @@ public class UserService {
         });
     }
 
-    public Optional<User> authenticate(String email, String password) {
-        return userRepository.findByEmailAndPassword(email, password);
+    public Optional<User> authenticate(String codigo, String password) {
+        return userRepository.findByEmailAndPassword(codigo, password);
     }
 }

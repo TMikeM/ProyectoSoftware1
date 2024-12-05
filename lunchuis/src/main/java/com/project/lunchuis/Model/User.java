@@ -23,7 +23,7 @@ public class User {
     private String email;
     private String dni;
     private String phoneNumber;
-
+    private String codigo;
     @Enumerated(EnumType.STRING)
     private Rol rol;
     private Boolean session;
