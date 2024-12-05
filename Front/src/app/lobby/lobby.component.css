@@ -5,7 +5,7 @@ nav.navbar {
     z-index: 100;
     background-color: #313131;
     padding: 0.1rem;
-    font-family: 'Georgia', sans-serif;
+
 }
 
 .navbar-text {
@@ -25,7 +25,6 @@ nav.navbar {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
-    z-index: 101;
 }
 
 .text-titulo,
@@ -33,7 +32,7 @@ nav.navbar {
     color: #ffff;
 }
 
-.info-container h3, 
+.info-container h3,
 .info-container h5 {
     margin: 0 0 10px;
     text-align: left;
@@ -83,10 +82,13 @@ nav.navbar {
     background-image: url('Images/foto perfil.png');
 }
 
-#profilePhoto{
-    background-image: url('Images/foto perfil.png');
-    width: 200px; /* Ajusta el tamaño según sea necesario */
-    height: 200px;
+#profilePhoto {
+  background-image: url('Images/foto perfil.png');
+  width: auto; /* El ancho ocupa todo el contenedor disponible */
+  height: 200px; /* Altura fija para la imagen */
+  background-repeat: no-repeat; /* No repite la imagen */
+  background-position: center; /* Centra la imagen */
+  background-size: contain; /* Ajusta la imagen para que cubra todo el área */
 }
 
 
@@ -127,7 +129,7 @@ nav.navbar {
 .centered-rectangle {
     text-align: center;
     position: absolute;
-    padding: 20%;
+    padding: 15%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -166,18 +168,18 @@ nav.navbar {
 }
 
 .hora {
-    width: 3%; /* Usa un porcentaje relativo al reloj */
-    height: 25%;
+    width: 2%; /* Usa un porcentaje relativo al reloj */
+    height: 20%;
 }
 
 .minuto {
-    width: 2%;
-    height: 35%;
+    width: 1%;
+    height: 30%;
 }
 
 .segundo {
-    width: 1.5%;
-    height: 40%;
+    width: 1%;
+    height: 35%;
     background: #ffff;
 }
 
@@ -411,6 +413,11 @@ nav.navbar {
     flex-direction: column; /* Distribuye los botones a ambos lados */
     margin-top: 20px;
     gap: 10px; /* Espacio entre los botones */
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .modal-confirm-btn, .modal-close-btn {
@@ -434,26 +441,37 @@ nav.navbar {
 }
 
 .modalSelecciones {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 2%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 2%;
 }
 
 .seleccion {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 5%;
+  display: flex;
+  flex-direction: column;  /* Cambiado a columna para apilar los checkboxes */
+  align-items: flex-end;   /* Alinea los elementos a la derecha */
+  gap: 10px;               /* Añade un espacio entre los checkboxes */
+  margin: 10%;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 30px;               /* Añade espacio entre el texto y el checkbox */
+  justify-content: flex-end; /* Alinea el contenido del label a la derecha */
 }
 
 .checkbox {
-    margin-left: 15px; /* Mantiene el margen a la izquierda de los checkboxes */
+  margin-left: 0;          /* Elimina cualquier margen extra a la izquierda */
 }
 
 .modalMetodoPago {
     display: flex;
     align-items: center;
     width: 100%;
+}
+
+.titlesSelec {
+  margin-right: 10%;
 }

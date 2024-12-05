@@ -10,14 +10,14 @@
 }
 
 .logito {
-    width: 350px; /* Ajusta según sea necesario */ 
-    height: 350px; /* Ajusta según sea necesario */ 
-    background-image: url("images/LogoLunch.png"); /* Ruta a tu imagen */ 
-    background-size: auto 350px; /* Ajusta el tamaño de la imagen al contenedor */ 
-    background-repeat: no-repeat; /* No repite la imagen */ 
+    width: 350px; /* Ajusta según sea necesario */
+    height: 350px; /* Ajusta según sea necesario */
+    background-image: url("images/LogoLunch.png"); /* Ruta a tu imagen */
+    background-size: auto 350px; /* Ajusta el tamaño de la imagen al contenedor */
+    background-repeat: no-repeat; /* No repite la imagen */
     background-position: center; /* Centra la imagen */
     position: relative;
-    
+
 }
 
 
@@ -48,7 +48,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35%;
+    width: 25%;
     height: auto;
     background-color: #313131; /* Fondo semitransparente */
     border-radius: 35px;
