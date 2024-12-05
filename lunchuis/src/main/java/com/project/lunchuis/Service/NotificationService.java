@@ -84,7 +84,8 @@ public class NotificationService {
             mailMessage.setTo(notification.getUsuario().getEmail());
             mailMessage.setSubject("Nueva Notificación");
             mailMessage.setText(notification.getMessage());
-    
+
+            
             // Enviar el correo
             mailSender.send(mailMessage);
             System.out.println("Correo enviado a " + notification.getUsuario().getEmail());
