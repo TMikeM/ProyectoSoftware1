@@ -83,6 +83,12 @@ nav.navbar {
     background-image: url('Images/foto perfil.png');
 }
 
+#profilePhoto{
+    background-image: url('Images/foto perfil.png');
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: 200px;
+}
+
 
 .btn_lunch img {
     display: block;
