@@ -28,6 +28,11 @@ public class PurchaseValueController {
         return purchaseValueService.savePurchaseValue(purchaseValue);
     }
 
+    @PutMapping("/{id}")
+    public PurchaseValue updatePurchaseValue(@PathVariable Long id, @RequestBody PurchaseValue purchaseValue) {
+        return purchaseValueService.updatePurchaseValue(id, purchaseValue);
+    }
+
     @DeleteMapping("/{id}")
     public void deletePurchaseValue(@PathVariable Long id) {
         purchaseValueService.deletePurchaseValue(id);
