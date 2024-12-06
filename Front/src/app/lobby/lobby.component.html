@@ -132,7 +132,7 @@
               <p>Selecciona <br> Servicio</p>
               <label for="opcion1">
                   <span class="titlesSelec">Almuerzo</span>
-                  <input class="checkbox" type="checkbox" id="opcion1" value="opcion1">
+                  <input class="checkbox" type="checkbox" id="opcion1" value="opcion1" [(ngModel)]="isChecked1" (change)="onCheckboxChange($event, 1)">
               </label>
               <label for="opcion2">
                   <span class="titlesSelec">Cena</span>
@@ -143,7 +143,7 @@
               <p>Selecciona <br> Cupo</p>
               <label for="opcion3">
                   <span class="titlesSelec">Unico</span>
-                  <input class="checkbox" type="checkbox" id="opcion3" value="opcion3">
+                  <input class="checkbox" type="checkbox" id="opcion3" value="opcion3" [(ngModel)]="isChecked2" (change)="onCheckboxChange($event, 2)">
               </label>
               <label for="opcion4">
                   <span class="titlesSelec">Mensual</span>
@@ -162,7 +162,7 @@
             </select>
         </div>
         <div class="modal-buttons">
-            <button id="confirmarCompraButton" class="modal-confirm-btn">Confirmar Compra</button>
+            <button id="confirmarCompraButton" class="modal-confirm-btn" (click)="registrarCompra()">Confirmar Compra</button>
             <button id="cancelarCompraButton" class="modal-close-btn">Cancelar Compra</button>
         </div>
     </div>

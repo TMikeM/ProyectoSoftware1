@@ -5,6 +5,8 @@ import { PurchaseValueService } from '../purchase-value.service';
 import { PurchaseValue } from '../purchase-value';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { Buy } from '../buy';
+import { BuyService } from '../buy.service';
 
 @Component({
   selector: 'app-lobby',
@@ -16,12 +18,16 @@ export class LobbyComponent implements OnInit, AfterViewInit {
   private activeContainer: HTMLElement | null = null;
   user!: Usuario;
   purchase: PurchaseValue = { cantidadDiaria: 0, cantidadCena: 0, cantidadMensual: 0, valorCena: 0, valorDiario: 0, valorMensual: 0 };
-
+  buy!: Buy;
+  isChecked1: boolean = false;
+  isChecked2: boolean = false;
+  currentDate: Date = new Date();
   constructor(
     private renderer: Renderer2,
     private purchaseValueService: PurchaseValueService,
     private router: Router,
     private authService: AuthService,
+    private buyService: BuyService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
@@ -198,13 +204,42 @@ export class LobbyComponent implements OnInit, AfterViewInit {
     } else {
       console.log('No se encontró usuario en localStorage');
     }
-    
+
   }
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
+  formatDate(date: Date): string {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Meses van de 0 a 11
+    const year = date.getFullYear();
+    return `${year}-${month}-${day}`;
+  }
+  registrarCompra(): void {
+    console.log(this.buy)
+    this.buy.user = this.user;
+    this.buy.dinner = false;
+    this.buy.lunch = this.isChecked1;
+    this.buy.monthly = !this.isChecked2;
+    this.buy.date = this.formatDate(this.currentDate);
+    this.buy.value = this.purchase.valorDiario;
+    this.buyService.registrarCompra(this.buy).subscribe(Response => {
+      console.log('Compra registrada:', Response);
+    }, error => {
+      console.error('Error al registrar compra:', error);
+    })
+
+  }
+
+  onCheckboxChange(event: Event, checkBoxNumber: number): void {
+    const checkbox = event.target as HTMLInputElement;
+    if (checkBoxNumber === 1) {
+      this.isChecked1 = checkbox.checked;
+    }
+    else if (checkBoxNumber === 2) {
+      this.isChecked2 = checkbox.checked;
+    }
+    console.log(`Checkbox ${checkBoxNumber} está:`, checkbox.checked);
+  }
 }
-
-
-
