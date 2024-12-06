@@ -26,13 +26,14 @@ public class ReportController {
         return ResponseEntity.ok(reports);
     }
 
-    @GetMapping("/between-dates")
-    public ResponseEntity<List<Report>> getReportsBetweenDates(
-            @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-            @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
-        List<Report> reports = reportService.getReportsBetweenDates(startDate, endDate);
-        return ResponseEntity.ok(reports);
-    }
+    @GetMapping("/with-buys/between-dates")
+public ResponseEntity<List<Report>> getReportsWithBuysBetweenDates(
+        @RequestParam("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+        @RequestParam("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+    List<Report> reports = reportService.getReportsWithBuysBetweenDates(startDate, endDate);
+    return ResponseEntity.ok(reports);
+}
+
 
     @GetMapping
     public ResponseEntity<List<Report>> getAllReports() {

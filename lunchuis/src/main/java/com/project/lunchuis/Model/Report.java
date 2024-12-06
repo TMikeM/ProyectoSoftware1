@@ -23,6 +23,7 @@ public class Report {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
 
-    @OneToMany(mappedBy = "report", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "report", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Buy> historyPurchases;
+
 }

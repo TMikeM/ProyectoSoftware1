@@ -3,12 +3,16 @@ package com.project.lunchuis.Service;
 import com.project.lunchuis.Model.Buy;
 import com.project.lunchuis.Model.Report;
 import com.project.lunchuis.Repository.ReportRepository;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@Transactional
 public class ReportService {
 
     private final ReportRepository reportRepository;
@@ -25,9 +29,19 @@ public class ReportService {
         return reportRepository.findAll();
     }
 
-    public List<Report> getReportsBetweenDates(LocalDate startDate, LocalDate endDate) {
-        return reportRepository.findByDateBetween(startDate, endDate);
+    public List<Report> getReportsWithBuysBetweenDates(LocalDate startDate, LocalDate endDate) {
+        List<Report> reports = reportRepository.findByDateBetween(startDate, endDate);
+    
+        // Asegurarse de que las compras asociadas se carguen correctamente (en caso de lazy loading)
+        reports.forEach(report -> {
+            if (report.getHistoryPurchases() != null) {
+                report.getHistoryPurchases().size(); // Fuerza la inicialización de la lista
+            }
+        });
+    
+        return reports;
     }
+    
 
     public Report saveReport(Report report) {
         if (report.getHistoryPurchases() != null && !report.getHistoryPurchases().isEmpty()) {

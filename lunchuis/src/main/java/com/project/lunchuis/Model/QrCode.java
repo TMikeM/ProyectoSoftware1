@@ -12,6 +12,8 @@ public class QrCode {
     private Long id;
 
     @Lob
+    
+    @Basic(fetch = FetchType.LAZY)
     private byte[] qrImage;
 
     @OneToOne

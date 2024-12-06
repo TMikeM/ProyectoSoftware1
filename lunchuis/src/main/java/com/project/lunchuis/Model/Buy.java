@@ -30,7 +30,7 @@ public class Buy {
     private boolean monthly;
 
     // Relación con QR
-    @OneToOne(mappedBy = "buy", cascade = CascadeType.ALL, orphanRemoval = true)// Campo qr_id en la base de datos
+    @OneToOne(mappedBy = "buy", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonIgnore
     private QrCode qrcode;
     public void setQrcode(QrCode qrcode) {
@@ -42,6 +42,7 @@ public class Buy {
     // Relación con Report
     @ManyToOne
     @JoinColumn(name = "report_id", nullable = false) // Campo report_id en la base de datos
+    @JsonIgnore
     private Report report;
 
     // Relación con User
