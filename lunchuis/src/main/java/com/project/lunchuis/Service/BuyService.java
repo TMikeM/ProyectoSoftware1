@@ -37,12 +37,25 @@ public class BuyService {
             throw new IllegalArgumentException("La compra debe estar asociada a un usuario válido");
         }
     
-        // Crear un Report automáticamente si no existe uno
-        Report report = new Report();
-        report.setDate(LocalDate.now());
-        report = reportRepository.save(report);  // Guardamos el reporte en la base de datos
+        // Asegúrate de que la compra tenga una fecha asignada
+        if (buy.getDate() == null) {
+            throw new IllegalArgumentException("La compra debe tener una fecha asignada");
+        }
     
-        // Asocia el Report a la compra
+        // Buscar si ya existe un reporte con la misma fecha
+        Report report = reportRepository.findByDate(buy.getDate())
+                .stream()
+                .findFirst()
+                .orElse(null);
+    
+        // Si no existe un reporte para esa fecha, creamos uno nuevo
+        if (report == null) {
+            report = new Report();
+            report.setDate(buy.getDate()); // Usa la fecha de la compra
+            report = reportRepository.save(report);
+        }
+    
+        // Asociar el reporte a la compra
         buy.setReport(report);
     
         // Guardamos la compra (Buy) primero
@@ -50,8 +63,6 @@ public class BuyService {
     
         // Crear y asociar el código QR a la compra
         QrCode qrCode = qrService.generateQrCode(savedBuy); // Generamos el código QR con el servicio
-    
-        // Asocia el QrCode generado con la compra
         savedBuy.setQrcode(qrCode);
     
         // Guardamos el QrCode
@@ -64,10 +75,11 @@ public class BuyService {
         notificationService.createNotification(notification, savedBuy.getUser().getId());
     
         // Enviar la notificación por correo electrónico
-        notificationService.sendNotification(notification);  // Ahora enviamos el correo
+        notificationService.sendNotification(notification);
     
         return savedBuy;
     }
+    
     
     public List<Buy> getAllBuys() {
         return buyRepository.findAll();
