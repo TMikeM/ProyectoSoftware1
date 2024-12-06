@@ -8,14 +8,14 @@
             style="display: none; position: absolute; top: 100%; left: 0; z-index: 1000;">
             <h3 class="text-titulo">Información de Combos</h3>
             <h5 class="text-subtitulo">Valor del combo</h5>
-            <h6 class="textInfo">$xxxx</h6>
+            <h6 class="textInfo">$5000</h6>
             <h3 class="text-subtitulo">Horario del servicio</h3>
             <h5 class="text-subtitulo">Para Comprar</h5>
-            <h6 class="textInfo">Inicio: xxxx</h6>
-            <h6 class="textInfo">Fin: xxxx</h6>
+            <h6 class="textInfo">Inicio: 6:00 am</h6>
+            <h6 class="textInfo">Fin: 11:30 am</h6>
             <h5 class="text-subtitulo">Para Recibir</h5>
-            <h6 class="textInfo">Inicio: xxxx</h6>
-            <h6 class="textInfo">Fin: xxxx</h6>
+            <h6 class="textInfo">Inicio: 11:30 am</h6>
+            <h6 class="textInfo">Fin: 12:45 pm</h6>
         </div>
 
         <span class="navbar-text" id="lunchUIS">Lunch UIS</span>
@@ -38,9 +38,9 @@
                 <div style="text-align: center; margin: 10px 0;" id="profilePhoto">
                     <!-- <img src="Images/foto perfil.png" alt="Perfil" style="width: 150px; height: auto;"> -->
                 </div>
-                <p class="textInfo2">Nombre del Usuario</p>
-                <p class="textInfo2">Rol del usuario</p>
-                <p class="textInfo2">Codigo del usuario</p>
+                <p class="textInfo2" [(ngModel)]="user.name" name="name">{{user.name}}</p>
+                <p class="textInfo2"[(ngModel)]="user.rol" name="rol">{{user.rol}}</p>
+                <p class="textInfo2"[(ngModel)]="user.code" name="code">{{user.code}}</p>
 
                 <div class="button-container">
                     <button class="btn_perfil" id="btnMisCompras">Mis Compras</button>
@@ -60,7 +60,7 @@
     </div>
     <div class="hora-digital" id="horaDigital">00:00:00</div>
     <p class="text-titulo">Combos disponibles</p>
-    <p class="textInfo">#xxxxx</p>
+    <p class="textInfo">200</p>
     <button class="btn_comprar_combo" id="btnComprarCombo">Comprar Combo</button>
 </div>
 

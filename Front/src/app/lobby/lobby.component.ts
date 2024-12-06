@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Usuario } from '../usuario';
 
 @Component({
   selector: 'app-lobby',
@@ -9,16 +10,18 @@ import { isPlatformBrowser } from '@angular/common';
 export class LobbyComponent implements OnInit, AfterViewInit {
   title = 'Proyecto';
   private activeContainer: HTMLElement | null = null;
+  user!: Usuario;
 
   constructor(
     private renderer: Renderer2,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       setInterval(this.actualizarReloj.bind(this), 1000);
       setInterval(this.actualizarHoraDigital.bind(this), 1000);
+      this.obtenerUsuarioDeLocalStorage();
     }
   }
 
@@ -164,5 +167,18 @@ export class LobbyComponent implements OnInit, AfterViewInit {
   private closeModalCompra(modalOverlayCompra: HTMLElement): void {
     modalOverlayCompra.style.display = 'none';
   }
+  obtenerUsuarioDeLocalStorage(this: any): void {
+    const usuarioString = localStorage.getItem('usuarioRegistrado');
+    if (usuarioString) {
+      this.user = JSON.parse(usuarioString);
+      console.log('Usuario cargado desde localStorage:', this.user);
+
+    } else {
+      console.log('No se encontró usuario en localStorage');
+    }
+
+  }
 }
+
+
 

@@ -4,6 +4,7 @@ import { UsuarioService } from '../usuario.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import * as bootstrap from 'bootstrap';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,17 @@ import * as bootstrap from 'bootstrap';
 })
 export class LoginComponent {
   showBase: boolean = true;
-  dni: string='45673921';
-  contrasena: string='securepass321';
-  constructor(private router: Router, private usuarioService: UsuarioService, private location: Location) {
+  code: string = '';
+  contrasena: string = '';
+  user: Usuario | null = null; // Inicializamos la propiedad user
+
+  constructor(
+    private router: Router,
+    private usuarioService: UsuarioService,
+    private authService: AuthService,
+  ) { }
+  ngOnInit() {
+    this.usuarioService.borrarCache();
   }
   toggleDisplay(): void {
     this.showBase = !this.showBase;
@@ -33,16 +42,49 @@ export class LoginComponent {
       }
     }
   }
+
   consulta(): void {
-    this.usuarioService.consultarUsuario(this.dni, this.contrasena).subscribe(response => {
-      console.log('Usuario registrado:', this.dni,this.contrasena);
+    this.usuarioService.consultarUsuario(this.code, this.contrasena).subscribe(response => {
+      console.log('Respuesta del backend:', response);
       if (response != null) {
-        this.router.navigate(['/lobby']);
+        console.log('Usuario registrado:', response);
+        // Guarda el usuario en el almacenamiento local
+        localStorage.setItem('usuarioRegistrado', JSON.stringify(response));
+        // Actualiza la propiedad user con el usuario registrado
+        this.user = response;
+        if (this.user.rol == 'Estudiante') {
+          this.authService.login()
+          this.router.navigate(['/lobby']);
+        }
+        else if ((this.user.rol == 'Admin')) {
+          this.authService.login()
+          this.router.navigate(['/admin']);
+        }
+        else {
+          console.log('Tipo de rol no valido: ', this.user.rol)
+        }
       } else {
         console.error('Error al autenticar usuario:');
       }
     });
   }
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 
+  obtenerUsuarioDeLocalStorage(): any {
+    const usuarioString = localStorage.getItem('usuarioRegistrado');
+    if (usuarioString) {
+      this.user = JSON.parse(usuarioString);
+      console.log('Usuario cargado desde localStorage:', this.user);
+      return this.user;
+    } else {
+      console.log('No se encontró usuario en localStorage');
+      return null;
+    }
+
+  }
 }
+
 

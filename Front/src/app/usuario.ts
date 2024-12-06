@@ -3,7 +3,7 @@ export class Usuario {
     name!: string;
     contrasena!: string;
     email!: string;
-    dni!: string;
+    code!: string;
     phoneNumber!: string;
     rol!: string;
     sesion: boolean=false;

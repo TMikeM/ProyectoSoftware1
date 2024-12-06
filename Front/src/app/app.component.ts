@@ -24,7 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.routerSubscription = this.router.events.subscribe(event => {
         if (event instanceof NavigationEnd) {
-          if (event.url === '/lobby'||event.url === '/admin') { // Cambia a la ruta de tu página específica
+          if (event.url === '/lobby'||event.url === '/admin') { 
             this.setAltBackground();
           } else {
             this.setDefaultBackground();
