@@ -34,13 +34,13 @@
     </div>
     <div class="row">
         <div class="col-4">
-            <h2 class="textInfo2">Semanal</h2>
+            <h2 class="textInfo2">Diario</h2>
         </div>
         <div class="col-4">
-            <input type="text" class="form-control" id="username" placeholder="######">
+            <input type="number" class="form-control" id="username" placeholder="{{purchase?.cantidadDiaria}}" [(ngModel)]="cantidadDia" name="cantidadDia">
         </div>
         <div class="col-4">
-            <input type="text" class="form-control" id="username" placeholder="######">
+            <input type="number" class="form-control" id="username" placeholder="{{purchase?.cantidadCena}}"  [(ngModel)]="cantidadCena" name="cantidadCena">
         </div>
     </div>
     <div class="row">
@@ -48,11 +48,11 @@
             <h2 class="textInfo2">Mensual</h2>
         </div>
         <div class="col-4">
-            <input type="text" class="form-control" id="username" placeholder="######">
+            <input type="number" class="form-control" id="username" placeholder="{{purchase?.cantidadMensual}}"  [(ngModel)]="cantidadMes" name="cantidadMes">
         </div>
         <div class="col-4 colBoton">
             <div>
-                <button class="btn-login" id="btnIniciarSesion">Modificar</button>
+                <button class="btn-login" id="btnIniciarSesion" (click)="actualizar()">Modificar</button>
             </div>
         </div>
     </div>

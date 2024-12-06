@@ -13,15 +13,15 @@
             <div class="price-container">
               <div class="price-item">
                 <h5 class="text-subtitulo">Almuerzo</h5>
-                <h6 class="textInfo">$5000</h6>
+                <h6 class="textInfo" [(ngModel)]="this.purchase.valorDiario" name="valorDiario">{{purchase.valorDiario}}</h6>
               </div>
               <div class="price-item">
                 <h5 class="text-subtitulo">Cena</h5>
-                <h6 class="textInfo">$5000</h6>
+                <h6 class="textInfo" [(ngModel)]="this.purchase.valorCena" name="valorCena">{{purchase.valorCena}}</h6>
               </div>
               <div class="price-item">
                 <h5 class="text-subtitulo">Mensual</h5>
-                <h6 class="textInfo">$5000</h6>
+                <h6 class="textInfo" [(ngModel)]="this.purchase.valorMensual" name="valorMensual">{{purchase.valorMensual}}</h6>
               </div>
             </div>
 
@@ -98,15 +98,15 @@
     <div class="price-container">
       <div class="price-item">
         <h5 class="text-subtitulo">Almuerzo</h5>
-        <p class="textInfo">200</p>
+        <p class="textInfo" [(ngModel)]="purchase.cantidadDiaria" name="cantidadDiaria">{{purchase.cantidadDiaria}}</p>
       </div>
       <div class="price-item">
         <h5 class="text-subtitulo">Cena</h5>
-        <p class="textInfo">200</p>
+        <p class="textInfo" [(ngModel)]="this.purchase.cantidadCena" name="cantidadCena">{{purchase.cantidadCena}}</p>
       </div>
       <div class="price-item">
         <h5 class="text-subtitulo">Mensual</h5>
-        <p class="textInfo">200</p>
+        <p class="textInfo" [(ngModel)]="purchase.cantidadMensual" name="cantidadMensual">{{purchase.cantidadMensual}}</p>
       </div>
     </div>
 
