@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { PurchaseValue } from '../purchase-value';
 import { PurchaseValueService } from '../purchase-value.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-administrative',
@@ -13,7 +15,9 @@ export class AdministrativeComponent {
   cantidadCena: number = 0;
   cantidadMes: number = 0;
   constructor(
-    private purchaseValueService: PurchaseValueService
+    private purchaseValueService: PurchaseValueService,
+    private router: Router,
+    private authService: AuthService,
   ) { }
   ngOnInit() {
     this.obtenerDefaultValuesLocalStorage();
@@ -54,6 +58,10 @@ export class AdministrativeComponent {
     else {
       console.log('El objeto es nulo')
     }
+  }
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
 

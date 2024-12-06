@@ -3,6 +3,8 @@ import { isPlatformBrowser } from '@angular/common';
 import { Usuario } from '../usuario';
 import { PurchaseValueService } from '../purchase-value.service';
 import { PurchaseValue } from '../purchase-value';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-lobby',
@@ -13,11 +15,13 @@ export class LobbyComponent implements OnInit, AfterViewInit {
   title = 'Proyecto';
   private activeContainer: HTMLElement | null = null;
   user!: Usuario;
-  purchase: PurchaseValue = { cantidadDiaria: 0, cantidadCena: 0, cantidadMensual: 0, valorCena:0,valorDiario:0, valorMensual:0};
+  purchase: PurchaseValue = { cantidadDiaria: 0, cantidadCena: 0, cantidadMensual: 0, valorCena: 0, valorDiario: 0, valorMensual: 0 };
 
   constructor(
     private renderer: Renderer2,
     private purchaseValueService: PurchaseValueService,
+    private router: Router,
+    private authService: AuthService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
@@ -194,7 +198,11 @@ export class LobbyComponent implements OnInit, AfterViewInit {
     } else {
       console.log('No se encontró usuario en localStorage');
     }
-
+    
+  }
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }
 
