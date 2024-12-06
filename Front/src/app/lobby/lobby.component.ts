@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit, Renderer2, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Usuario } from '../usuario';
+import { PurchaseValueService } from '../purchase-value.service';
+import { PurchaseValue } from '../purchase-value';
 
 @Component({
   selector: 'app-lobby',
@@ -11,9 +13,11 @@ export class LobbyComponent implements OnInit, AfterViewInit {
   title = 'Proyecto';
   private activeContainer: HTMLElement | null = null;
   user!: Usuario;
+  purchase: PurchaseValue = { cantidadDiaria: 0, cantidadCena: 0, cantidadMensual: 0, valorCena:0,valorDiario:0, valorMensual:0};
 
   constructor(
     private renderer: Renderer2,
+    private purchaseValueService: PurchaseValueService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
@@ -22,7 +26,21 @@ export class LobbyComponent implements OnInit, AfterViewInit {
       setInterval(this.actualizarReloj.bind(this), 1000);
       setInterval(this.actualizarHoraDigital.bind(this), 1000);
       this.obtenerUsuarioDeLocalStorage();
+      this.obtenerDefaultValuesLocalStorage();
     }
+  }
+  obtenerDefaultValuesLocalStorage(): void {
+    this.purchaseValueService.consultarValores().subscribe(response => {
+      console.log('Respuesta del backend:', response);
+      if (response != null) {
+        console.log('Datos por defecto:', response);
+        // Guarda el usuario en el almacenamiento local
+        localStorage.setItem('purchaseValue', JSON.stringify(response));
+        this.purchase = response;
+      } else {
+        console.error('Error al cargar datos: ', response);
+      }
+    });
   }
 
   ngAfterViewInit(): void {
