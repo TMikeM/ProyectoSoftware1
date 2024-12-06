@@ -9,7 +9,7 @@ nav.navbar {
 }
 
 .navbar-text {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
     color: black;
     text-shadow: 1px 1px 0 #d9d9d9,
@@ -30,6 +30,7 @@ nav.navbar {
 .text-titulo,
 .text-subtitulo {
     color: #ffff;
+    margin-top: 2.5px;
 }
 
 .info-container h3,
@@ -41,6 +42,18 @@ nav.navbar {
 .info-container h6 {
     margin: 0 0 10px;
     text-align: center;
+}
+
+.price-container {
+  padding: 5%;
+  display: flex;
+  justify-content: space-evenly; /* Para separar los items en línea */
+}
+
+.price-item {
+  text-align: center; /* Centra el texto dentro de cada item */
+  margin-top: 2.5px ;
+  margin-bottom: 2.5px;
 }
 
 /* Estilos de texto */
@@ -72,6 +85,10 @@ nav.navbar {
 
 #toggleButton {
     background-image: url('Logos/Lunch-removebg-preview.png');
+}
+
+#qrs {
+  background-image: url('Images/qr.png');
 }
 
 #notificationButton {
@@ -133,10 +150,10 @@ nav.navbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%; /* Cambia el ancho a un porcentaje */
-    max-width: 600px; /* Limita el ancho máximo */
+    width: 100%; /* Cambia el ancho a un porcentaje */
+    max-width: 700px; /* Limita el ancho máximo */
     height: auto; /* Deja que la altura se ajuste automáticamente */
-    min-height: 400px; /* Establece una altura mínima */
+    min-height: 680px; /* Establece una altura mínima */
     background-color: rgba(49, 49, 49, 0.9); /* Mantén el color de fondo */
     border-radius: 10px; /* Bordes redondeados */
     z-index: 50; /* Asegura que esté en el nivel adecuado */

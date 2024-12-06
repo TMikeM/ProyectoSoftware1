@@ -7,15 +7,43 @@
         <div class="info-container" id="infoContainer"
             style="display: none; position: absolute; top: 100%; left: 0; z-index: 1000;">
             <h3 class="text-titulo">Información de Combos</h3>
-            <h5 class="text-subtitulo">Valor del combo</h5>
-            <h6 class="textInfo">$5000</h6>
+
+
+            <h5 class="text-subtitulo">Valor de Combos</h5>
+            <div class="price-container">
+              <div class="price-item">
+                <h5 class="text-subtitulo">Almuerzo</h5>
+                <h6 class="textInfo">$5000</h6>
+              </div>
+              <div class="price-item">
+                <h5 class="text-subtitulo">Cena</h5>
+                <h6 class="textInfo">$5000</h6>
+              </div>
+              <div class="price-item">
+                <h5 class="text-subtitulo">Mensual</h5>
+                <h6 class="textInfo">$5000</h6>
+              </div>
+            </div>
+
             <h3 class="text-subtitulo">Horario del servicio</h3>
             <h5 class="text-subtitulo">Para Comprar</h5>
             <h6 class="textInfo">Inicio: 6:00 am</h6>
             <h6 class="textInfo">Fin: 11:30 am</h6>
+
             <h5 class="text-subtitulo">Para Recibir</h5>
-            <h6 class="textInfo">Inicio: 11:30 am</h6>
-            <h6 class="textInfo">Fin: 12:45 pm</h6>
+            <div class="price-container">
+              <div class="price-item">
+                <h5 class="text-subtitulo">Almuerzo</h5>
+                <h6 class="textInfo">Inicio: 11:30 am</h6>
+                <h6 class="textInfo">Fin: 12:45 pm</h6>
+              </div>
+              <div class="price-item">
+                <h5 class="text-subtitulo">Cena</h5>
+                <h6 class="textInfo">Inicio: 5:30 am</h6>
+                <h6 class="textInfo">Fin: 7:30 pm</h6>
+              </div>
+            </div>
+
         </div>
 
         <span class="navbar-text" id="lunchUIS">Lunch UIS</span>
@@ -24,15 +52,21 @@
             <button class="btn_lunch me-2" type="button" id="notificationButton">
                 <!-- <img src="Images/campana-removebg-preview.png" alt="Notificaciones" style="width: 27px; height: auto;"> -->
             </button>
+
             <div class="info-container" id="notificationContainer"
                 style="display: none; position: absolute; top: 100%; right: 0; z-index: 1000;">
                 <h3 class="text-titulo">Notificaciones</h3>
                 <p class="textInfo">Aquí van tus notificaciones.</p>
             </div>
 
+            <button class="btn_lunch me-2" type="button" id="qrs">
+              <!-- Aquí va el icono del nuevo botón -->
+            </button>
+
             <button class="btn_lunch" type="button" id="profileButton">
                 <!-- <img src="Images/foto perfil.png" alt="Perfil" style="width: 40px; height: auto;"> -->
             </button>
+
             <div class="info-container" id="profileContainer"
                 style="display: none; position: absolute; top: 100%; right: 0; z-index: 1000;">
                 <div style="text-align: center; margin: 10px 0;" id="profilePhoto">
@@ -60,7 +94,23 @@
     </div>
     <div class="hora-digital" id="horaDigital">00:00:00</div>
     <p class="text-titulo">Combos disponibles</p>
-    <p class="textInfo">200</p>
+
+    <div class="price-container">
+      <div class="price-item">
+        <h5 class="text-subtitulo">Almuerzo</h5>
+        <p class="textInfo">200</p>
+      </div>
+      <div class="price-item">
+        <h5 class="text-subtitulo">Cena</h5>
+        <p class="textInfo">200</p>
+      </div>
+      <div class="price-item">
+        <h5 class="text-subtitulo">Mensual</h5>
+        <p class="textInfo">200</p>
+      </div>
+    </div>
+
+
     <button class="btn_comprar_combo" id="btnComprarCombo">Comprar Combo</button>
 </div>
 
@@ -86,7 +136,7 @@
               </label>
               <label for="opcion2">
                   <span class="titlesSelec">Cena</span>
-                  <input class="checkbox" type="checkbox" id="opcion2" value="opcion2">
+                  <input class="checkbox" type="checkbox" id="opcion2" value="opcion2" disabled>
               </label>
           </div>
           <div class="seleccion">
@@ -97,7 +147,7 @@
               </label>
               <label for="opcion4">
                   <span class="titlesSelec">Mensual</span>
-                  <input class="checkbox" type="checkbox" id="opcion4" value="opcion4">
+                  <input class="checkbox" type="checkbox" id="opcion4" value="opcion4" disabled>
               </label>
           </div>
       </div>
@@ -107,7 +157,6 @@
                 <option value="ninguno">Ninguno</option>
                 <option value="tarjeta">Tarjeta de Crédito</option>
                 <option value="efectivo">Efectivo</option>
-                <option value="paypal">Nequi</option>
                 <option value="paypal">Nequi</option>
                 <option value="transferencia">PSE</option>
             </select>
