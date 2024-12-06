@@ -1,5 +1,5 @@
-export interface QrCode {
-    id: number;
-    qrImage: string;  
-    buyId: number;
+export class QrCode {
+    id!: number;
+    qrImage!: ImageBitmap;  
+    buyId!: number;
 }

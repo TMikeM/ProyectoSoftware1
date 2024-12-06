@@ -2,8 +2,6 @@ import { Component, HostListener } from '@angular/core';
 import { Usuario } from '../usuario';
 import { UsuarioService } from '../usuario.service';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
-import * as bootstrap from 'bootstrap';
 import { AuthService } from '../auth.service';
 
 @Component({
